@@ -1,6 +1,6 @@
 use std::io::{stdin};
 
-use celestial_convergence::{game_manager::cli::Cli, game_objects::{civilization, Civilization}};
+use celestial_convergence::{game_manager::cli::Cli, game_objects::{Civilization}};
 
 
 fn main() {

@@ -12,6 +12,7 @@ pub struct Civilization {
 }
 
 impl Civilization {
+    // Loads a new civilization from the RON file
     pub fn new() -> Self {
         let civilization_data = fs::read_to_string("src/game_objects/civilization_1.ron").expect("Could not open file");
         // println!("{civilization_data}");

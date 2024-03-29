@@ -1,4 +1,4 @@
-use crate::game_objects::{civilization, Civilization};
+use crate::game_objects::{Civilization};
 
 // This is responsible for interpreting user input and moving a player through the civilization
 pub struct Cli<'a> {
@@ -9,10 +9,13 @@ impl<'a> Cli<'a> {
     // Interprets a user input, tokenizes, and provides the correct in-game output
     pub fn interpret_player_input(&self, input: &str) {
         let tokens: Vec<&str> = input.trim().split(' ').collect();
+        
+        //TODO: Introduce error handling if user input < 0
         let action = tokens[0];
+        let direction = tokens[1];
 
         match action {
-            "go"    =>  println!("You used the go command."),
+            "go"    =>  self.translate_player(&direction),
             "again" =>  println!("You used the again command."),
             "look"  =>  println!("You used the look command."),
             "open"  =>  println!("You used the open command"),
@@ -21,7 +24,19 @@ impl<'a> Cli<'a> {
         };
     }
 
-    pub fn translate_player(&self, direction: &str) {
-        
+    // Will tanslate a player to a designated direction
+    fn translate_player(&self, direction: &str) {
+        match direction {
+            "north" =>  println!("You moved north."),
+            "south" =>  println!("You moved south."),
+            "east"  =>  println!("You moved east."),
+            "west"  =>  println!("You moved west."),
+            _       =>  println!("Invalid direction {}", direction)
+        };
+    }
+
+    // Validates if the player can move in this direction
+    fn validate_player_translation(&self, direction: &str) {
+
     }
 }
