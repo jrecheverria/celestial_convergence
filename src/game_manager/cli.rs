@@ -1,7 +1,8 @@
+// This is responsible for interpreting user input and moving a player through the civilization
 pub struct Cli {}
 
 impl Cli {
-    // Interprets a user input and provides the correct in-game output
+    // Interprets a user input, tokenizes, and provides the correct in-game output
     pub fn interpret_player_input(&self, input: &str) {
         let tokens: Vec<&str> = input.trim().split(' ').collect();
         let action = tokens[0];
