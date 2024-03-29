@@ -6,14 +6,16 @@ Civilization(  // Represents the entire world of the civilization
             description: "
             You are in a desert\n. There towering dunes of ochre sand stretch under a blazing sun. 
             You look at the ground and see two shadows."
-            target: 1
+            target: "north",
+            state: Blocked
         ),
         Area(
             name: "Stone Pyramid",
             description: "
             Within the stone temple, dim torchlight flickers against ancient walls adorned with faded frescoes, depicting tales of gods and heroes long gone. 
-            Hushed echoes of footsteps reverberate through vast chambers, where shadows dance amidst forgotten altars and crumbling relics, hinting at the temple's enigmatic past.
-            "
+            Hushed echoes of footsteps reverberate through vast chambers, where shadows dance amidst forgotten altars and crumbling relics, hinting at the temple's enigmatic past."
+            target: "north",
+            state: Blocked
         )
     ]
 )

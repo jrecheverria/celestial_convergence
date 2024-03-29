@@ -1,11 +1,12 @@
 use std::io::{stdin};
 
-use celestial_convergence::game_manager::cli::Cli;
+use celestial_convergence::{game_manager::cli::Cli, game_objects::{civilization, Civilization}};
 
 
 fn main() {
     let mut user_input = String::new();
-    let cli = Cli {};
+    let civilization = Civilization::new();
+    let cli = Cli { civilization: &civilization };
     
 
     loop {
